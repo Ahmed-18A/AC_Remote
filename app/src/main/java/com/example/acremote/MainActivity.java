@@ -1,16 +1,18 @@
 package com.example.acremote;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     ImageView fan;
-    TextView degree,mode,x,t;
-    boolean status=true,fanx=true,tur=true;
+    TextView degree,mode,x,t,stat;
+    boolean status=false,fanx=true,tur=true;
     int mode2 =2,fanD=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +23,20 @@ public class MainActivity extends AppCompatActivity {
         mode=findViewById(R.id.mode);
         x=findViewById(R.id.x);
         t=findViewById(R.id.t);
+        stat=findViewById(R.id.stat);
     }
 
     public void checkStatus(View view) {
-        status= !status;
+        if(status){
+            status=false;
+            stat.setTextColor(Color.RED);
+            stat.setText("Off");
+        }
+        else {
+            status=true;
+            stat.setTextColor(Color.GREEN);
+            stat.setText("On");
+        }
     }
     public void checkMode(View view) {
         if(status) {
@@ -39,15 +51,21 @@ public class MainActivity extends AppCompatActivity {
     }
     public void minDegree(View view) {
         int x=Integer.parseInt(degree.getText().toString());
-        if(status)
+        if(status){
             if(x>16)
                 degree.setText(String.valueOf(x-1));
+            else
+                Toast.makeText(this, "The lowest temperature is 16", Toast.LENGTH_SHORT).show();
+        }
     }
     public void plusDegree(View view) {
         int x=Integer.parseInt(degree.getText().toString());
-        if(status)
-            if(x<30)
-                degree.setText(String.valueOf(x+1));
+        if(status) {
+            if (x < 30)
+                degree.setText(String.valueOf(x + 1));
+            else
+                Toast.makeText(this, "The highest temperature is 30", Toast.LENGTH_SHORT).show();
+        }
     }
     public void air(View view) {
         if(status) {
