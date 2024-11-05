@@ -24,7 +24,7 @@
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="176dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="80dp"
         android:text=""
         android:textAlignment="center"
         android:textSize="25sp"
@@ -36,7 +36,7 @@
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="176dp"
-        android:layout_marginEnd="200dp"
+        android:layout_marginEnd="208dp"
         android:text=""
         android:textAlignment="center"
         android:textSize="25sp"
@@ -68,7 +68,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131">
+        app:layout_constraintVertical_bias="0.13">
 
     </TextView>
 
@@ -131,8 +131,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="10dp"
-            >
+            android:paddingBottom="10dp">
 
             <Button
                 android:layout_width="0dp"
@@ -153,20 +152,34 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/on"
-        android:layout_width="180dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="269dp"
-        android:layout_marginTop="228dp"
-        android:onClick="checkStatus"
-        android:text="On/Off"
-        android:textSize="30sp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="244dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/stat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="On"
+            android:textSize="50sp"
+            android:paddingLeft="20dp"
+            android:textColor=""
+            />
+
+        <Button
+            android:id="@+id/on"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="checkStatus"
+            android:text="On/Off"
+            android:textSize="40sp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
