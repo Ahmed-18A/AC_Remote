@@ -10,8 +10,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView fan;
-    TextView degree,mode,x,t,stat;
+    ImageView fan,x,t;
+    TextView degree,mode,stat;
     boolean status=false,fanx=true,tur=true;
     int mode2 =2,fanD=1;
     @Override
@@ -90,18 +90,18 @@ public class MainActivity extends AppCompatActivity {
     public void xfan(View view) {
         if(status) {
             if (fanx)
-                x.setText("x-fan");
+                x.setImageResource(R.drawable.fan);
             else
-                x.setText("");
+                x.setImageDrawable(null);
             fanx = !fanx;
         }
     }
     public void turbo(View view) {
         if(status) {
             if (tur)
-                t.setText("turbo");
+                t.setImageResource(R.drawable.turbo);
             else
-                t.setText("");
+                t.setImageDrawable(null);
             tur = !tur;
         }
     }

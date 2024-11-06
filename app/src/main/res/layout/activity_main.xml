@@ -19,27 +19,23 @@
         android:src="@drawable/i1"
         />
 
-    <TextView
+    <ImageView
         android:id="@+id/t"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="80dp"
-        android:text=""
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="244dp"
         android:textAlignment="center"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <ImageView
         android:id="@+id/x"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="208dp"
-        android:text=""
-        android:textAlignment="center"
-        android:textSize="25sp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="244dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
